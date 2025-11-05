@@ -1,0 +1,90 @@
+.featuresSection {
+  background: var(--bg-secondary);
+  padding: 5rem 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: var(--text-primary);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(108, 41, 255, 0.25);
+}
+
+.iconWrapper {
+  background: rgba(108, 41, 255, 0.1);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  filter: drop-shadow(0 0 4px rgba(108, 41, 255, 0.6));
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: var(--font-semibold);
+  color: var(--white-99);
+  margin-bottom: 0.6rem;
+}
+
+.text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 1.3rem;
+  opacity: 0.6;
+  color: var(--brand-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .arrow {
+  transform: translate(4px, -4px);
+  opacity: 1;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 3rem 5%;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  .arrow {
+    display: none;
+  }
+}

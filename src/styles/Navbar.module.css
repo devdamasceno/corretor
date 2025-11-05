@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
+  padding: 1.2rem 8%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-primary);
+  font-weight: var(--font-bold);
+  font-size: 1.25rem;
+}
+
+.logoIcon {
+  filter: drop-shadow(0 0 6px rgba(108, 41, 255, 0.5));
+}
+
+.logoText {
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.5px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.link {
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--brand-primary);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--brand-primary);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contactBtn {
+  background: var(--brand-primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  transition: background 0.3s ease;
+}
+
+.contactBtn:hover {
+  background: var(--brand-secondary);
+}
+
+/* 🔸 Menu mobile */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 900px) {
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    width: 220px;
+    height: calc(100vh - 70px);
+    transform: translateX(100%);
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .contactBtn {
+    display: none;
+  }
+}

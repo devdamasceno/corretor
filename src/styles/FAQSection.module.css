@@ -1,0 +1,124 @@
+.faqSection {
+  background: var(--bg-primary);
+  padding: 5rem 8%;
+  color: var(--text-primary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: var(--font-semibold);
+  color: var(--white-99);
+}
+
+.header p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.viewAll {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewAll:hover {
+  background: var(--brand-primary);
+  color: white;
+  border-color: transparent;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.item:hover {
+  border-color: var(--brand-primary);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  color: var(--white-99);
+  font-size: 1rem;
+  font-weight: var(--font-medium);
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.question:hover {
+  color: var(--brand-primary);
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: var(--brand-primary);
+  transition: transform 0.3s ease;
+}
+
+.active .icon {
+  transform: rotate(180deg);
+}
+
+.answerWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.open {
+  max-height: 200px;
+}
+
+.answer {
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 3rem 5%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .viewAll {
+    width: 100%;
+  }
+}
